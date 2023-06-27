@@ -1,0 +1,159 @@
+{
+  "movie": [
+    {
+      "id": 1,
+      "title": "film 1",
+      "description": "äciklama",
+      "imageUrl": "1.jpeg",
+      "isPopuler": true,
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "title": "film 2",
+      "description": "äciklama",
+      "imageUrl": "2.jpeg",
+      "isPopuler": true,
+      "categoryId": 1
+    },
+    {
+      "id": 3,
+      "title": "film 3",
+      "description": "äciklama",
+      "imageUrl": "3.jpeg",
+      "isPopuler": true,
+      "categoryId": 2
+    },
+    {
+      "id": 4,
+      "title": "film 4",
+      "description": "äciklama",
+      "imageUrl": "4.jpeg",
+      "isPopuler": true,
+      "categoryId": 2
+    },
+    {
+      "id": 5,
+      "title": "test",
+      "description": "deneme",
+      "imageUrl": "1.jpeg",
+      "isPopuler": false,
+      "datePublished": "2023-06-10T18:02:14.799Z",
+      "categoryId": "1"
+    },
+    {
+      "id": 6,
+      "title": "test2",
+      "description": "denem2",
+      "imageUrl": "2.jpeg",
+      "isPopuler": false,
+      "datePublished": "2023-06-10T18:04:41.917Z",
+      "categoryId": "3"
+    },
+    {
+      "id": 7,
+      "title": "test2",
+      "description": "denem2",
+      "imageUrl": "2.jpeg",
+      "isPopuler": false,
+      "datePublished": "2023-06-10T18:04:46.494Z",
+      "categoryId": "3"
+    },
+    {
+      "id": 8,
+      "title": "test66",
+      "description": "deneme55",
+      "imageUrl": "4.jpeg",
+      "isPopuler": false,
+      "datePublished": "2023-06-10T18:05:03.991Z",
+      "categoryId": "3"
+    },
+    {
+      "id": 9,
+      "title": "21d",
+      "description": "asd",
+      "imageUrl": "asd",
+      "isPopuler": false,
+      "datePublished": "2023-06-10T18:21:04.840Z",
+      "categoryId": "1"
+    },
+    {
+      "id": 10,
+      "title": "tttsad",
+      "description": "sddeneme",
+      "imageUrl": "sd.jpeg",
+      "isPopuler": false,
+      "datePublished": "2023-06-10T18:26:08.435Z",
+      "categoryId": "2"
+    },
+    {
+      "id": 11,
+      "title": "sdsads",
+      "description": "asdasdasd",
+      "imageUrl": "sdasd",
+      "isPopuler": false,
+      "datePublished": "2023-06-10T21:47:57.685Z",
+      "categoryId": "-1"
+    },
+    {
+      "title": "",
+      "description": "",
+      "imageUrl": "example.jpeg",
+      "categoryId": "-1",
+      "id": 12
+    },
+    {
+      "title": "",
+      "description": "",
+      "imageUrl": "",
+      "categoryId": "",
+      "id": 13
+    },
+    {
+      "title": "",
+      "description": "",
+      "imageUrl": "",
+      "categoryId": "",
+      "id": 14
+    },
+    {
+      "title": "",
+      "description": "",
+      "imageUrl": "",
+      "categoryId": "",
+      "id": 15
+    },
+    {
+      "title": "",
+      "description": "",
+      "imageUrl": "",
+      "categoryId": "",
+      "id": 16
+    },
+    {
+      "title": "",
+      "description": "",
+      "imageUrl": "",
+      "categoryId": "",
+      "id": 17
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Dram"
+    },
+    {
+      "id": 2,
+      "name": "Comedy"
+    },
+    {
+      "id": 3,
+      "name": "Romantic"
+    },
+    {
+      "id": 4,
+      "name": "Action"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+<div *ngIf="loading" class="spinner-border text-primary" role="status">
+  <span class="visually-hidden"> Loading... </span>
+</div>
+<!-- <app-movies></app-movies> -->
+<!-- <div class="alert alert-danger" *ngIf="error">
+  {{ error }}
+</div> -->
+
+<!-- <app-alert *ngIf="error"></app-alert> -->
+
+<div *ngIf="!loading">
+  <div *ngIf="movies.length > 0; else noMovies">
+    <h1>
+      {{ title }}
+    </h1>
+    <div class="alert alert-warning">
+      {{ filteredMovies.length }} Film bulundu...
+    </div>
+
+    <div class="mb-3">
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="filterText"
+        placeholder="search..."
+        (ngModelChange)="onInputChange()"
+      />
+      <small class="text-muted" *ngIf="filterText"
+        >Aradiginiz Kelime: {{ filterText }}</small
+      >
+    </div>
+
+    <ng-template [ngTemplateOutlet]="movieList1"> </ng-template>
+  </div>
+</div>
+
+<ng-template class="alert alert-warning" #noMovies>
+  <div class="alert alert-warning">Film Bulunamadi</div>
+</ng-template>
+
+<ng-template #movieList1>
+  <div class="card mb-3" *ngFor="let item of filteredMovies">
+    <div class="row">
+      <div class="col-md-3">
+        <img
+          src="assets/img/{{ item.imageUrl }}"
+          class="img-fluid rounded-start"
+          alt=""
+        />
+      </div>
+      <div class="col-md-9">
+        <div class="card-body">
+          <h2 class="card-title">{{ item.title | titlecase }}</h2>
+          <p class="card-text">
+            {{ item.description | summary : 30 }}
+          </p>
+          <!-- <p class="card-text">
+            {{ item.datePublished | date : "dd/MM/y" }}
+          </p> -->
+          <div>
+            <a
+              routerLink="/movies/{{ item.id }}"
+              class="btn btn-sm btn-outline-primary"
+            >
+              Details
+            </a>
+            <button
+              *ngIf="!getButtonstate(item)"
+              (click)="addToList($event, item)"
+              class="btn btn-sm btn-primary ms-1"
+            >
+              Add to list
+            </button>
+
+            <button
+              *ngIf="getButtonstate(item)"
+              (click)="addToList($event, item)"
+              class="btn btn-sm btn-danger ms-1"
+            >
+              Remove Basket
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<!-- <h4>lower-upper-title pipe</h4>
+<p>{{ "Samsung S20" }}</p>
+<p>{{ "Samsung S20" | lowercase }}</p>
+<p>{{ "Samsung S20" | uppercase }}</p>
+<p>{{ "Samsung S20" | titlecase }}</p> -->
+<!-- 
+<p>
+  {{ today | date : "fullDate" }}
+</p>
+<p>
+  {{ today | date : "medium" }}
+</p>
+<p>
+  {{ today | date : "shortTime" }}
+</p>
+<p>
+  {{ today | date : "h:mm:ss" }}
+</p> -->
+
+<!-- <br /><br />
+
+<h4>Decimal Pipe</h4>
+
+<p>{{ 2.223245 | number }}</p>
+<p>{{ 2.223245 | number : "2.0-3" }}</p>
+<p>{{ 2.223245 | number : "4.1-7" }}</p>
+
+<br /><br />
+
+<h4>Currency Pipe</h4>
+
+<p>{{ 395 | currency }}</p>
+<p>{{ 395 | currency : "EUR" }}</p>
+<p>{{ 395 | currency : "TRY" }}</p>
+
+<br /><br />
+
+<h4>Percent Pipe</h4>
+
+<p>{{ 0.259 | percent }}</p>
+<p>{{ 0.0259 | percent }}</p>
+<p>{{ 1.0259 | percent : "2.2-4" }}</p>
+<p>{{ 3 / 4 | percent }}</p> -->

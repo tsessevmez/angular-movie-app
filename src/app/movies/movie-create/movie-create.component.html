@@ -1,0 +1,51 @@
+<h1>Create Movie</h1>
+
+<form [formGroup]="movieForm" (ngSubmit)="createMovie()">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input
+      type="text"
+      name="title"
+      class="form-control"
+      formControlName="title"
+    />
+
+    <div
+      class="aler alert-danger"
+      *ngIf="movieForm.get('title').invalid && movieForm.get('title').touched"
+    >
+      <p *ngIf="title.errors.required">Gerekli Alan</p>
+      <p *ngIf="title.errors.minlength">Min 5 characters</p>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea
+      name="description"
+      class="form-control"
+      formControlName="description"
+    ></textarea>
+  </div>
+  <div class="mb-3">
+    <label for="imageUrl" class="form-label">Image Url</label>
+    <input
+      name="imageUrl"
+      type="text"
+      class="form-control"
+      formControlName="imageUrl"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="categoryId" class="form-label">Category</label>
+    <select name="categoryId" class="form-select" formControlName="categoryId">
+      <option value="-1">Select Category</option>
+      <option *ngFor="let item of categories" [value]="item.id">
+        {{ item.name }}
+      </option>
+    </select>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Create</button>
+  <br />
+  <button class="btn btn-warning" (click)="clearForm()">Clear</button>
+</form>
