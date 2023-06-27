@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Movie } from './movie.model';
-import { AlertifyService } from '../services/alertify.services';
-import { MovieService } from './movie.services';
+import { Movie } from './models/movie.model';
+import { AlertifyService } from '../shared/alertify.services';
+import { MovieService } from './services/movie.services';
 import { ActivatedRoute } from '@angular/router';
-import { AuthService } from '../auth/auth.service';
+import { AuthService } from '../auth/services/auth.service';
 
 @Component({
   selector: 'app-movies',

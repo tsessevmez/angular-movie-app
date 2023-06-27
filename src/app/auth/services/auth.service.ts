@@ -1,16 +1,17 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AuthResponse } from './auth-response.model';
+import { AuthResponse } from '../models/auth-response.model';
 import { catchError, tap } from 'rxjs/operators';
 import { BehaviorSubject, Observable, Subject, throwError } from 'rxjs';
-import { User } from './user.model';
+import { User } from '../models/user.model';
 import { Router } from '@angular/router';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  api_key = 'AIzaSyC5QVx1usG-_gCW4Q60caBZpqIFcehBenY';
+  api_key = environment.api_key;
   user = new BehaviorSubject<User>(null);
 
   constructor(private http: HttpClient, private router: Router) {}

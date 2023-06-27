@@ -6,13 +6,14 @@ import {
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, delay, map, tap } from 'rxjs/operators';
-import { Movie } from './movie.model';
-import { MyList } from './mylist.model';
+import { Movie } from '../models/movie.model';
+import { MyList } from '../models/mylist.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class MovieService {
-  url = 'http://localhost:3000/movie';
-  url_firebase = 'https://angular-movie-app-c04ac-default-rtdb.firebaseio.com/';
+  // url = 'http://localhost:3000/movie';
+  url_firebase = environment.url_firebase;
   constructor(private http: HttpClient) {}
 
   getMovies(categoryId: number): Observable<Movie[]> {

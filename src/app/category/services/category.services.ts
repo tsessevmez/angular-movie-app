@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Category } from './category.model';
+import { Category } from '../models/category.model';
 import { Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable()
 export class CategoryServices {
-  url_firebase = 'https://angular-movie-app-c04ac-default-rtdb.firebaseio.com/';
+  url_firebase = environment.url_firebase;
 
   constructor(private http: HttpClient) {}
 

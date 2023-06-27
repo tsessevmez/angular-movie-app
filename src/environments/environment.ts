@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  value: 'development',
+  api_key: 'AIzaSyC5QVx1usG-_gCW4Q60caBZpqIFcehBenY',
+  url_firebase: 'https://angular-movie-app-c04ac-default-rtdb.firebaseio.com/',
 };
 
 /*
